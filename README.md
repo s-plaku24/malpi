@@ -1,20 +1,22 @@
-# Iris Prediction API
+# Iris Species Classifier API
 
-A FastAPI service that predicts iris species using machine learning.
+A machine learning API built with FastAPI that predicts iris flower species based on petal and sepal measurements.
 
-## Features
-- Machine learning-powered iris species prediction
-- Token-based authentication
-- Automatic API documentation
-- Dockerized deployment
+## What it does
+- Predicts iris species (setosa, versicolor, virginica) from flower measurements
+- Uses Random Forest classifier trained on the classic iris dataset
+- Secure API with token authentication
 
-## API Endpoints
-- POST /hello - Greeting endpoint
-- POST /predict - Iris species prediction (requires API token)
+## How to use
+1. Start the server: `uvicorn app.main:app --reload`
+2. Send POST request to `/predict` with your API token
+3. Include flower measurements in JSON format
 
-## Deployed API
-- API: https://iris.yourdomain.com
-- Documentation: https://iris.yourdomain.com/docs
-
-## Usage
-Send POST request to /predict with X-API-Token header and JSON body containing sepal_length, sepal_width, petal_length, and petal_width.
+## Example request
+```json
+{
+    "sepal_length": 5.1,
+    "sepal_width": 3.5,
+    "petal_length": 1.4,
+    "petal_width": 0.2
+}

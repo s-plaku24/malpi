@@ -5,7 +5,7 @@ client = TestClient(app)
 
 def test_hello_with_valid_name():
     response = client.post("/hello", json={"name": "John"})
-    assert response.status_code == 200
+    assert response.status_code == 200      # All OK
     assert response.json() == {"message": "Hello John"}
 
 def test_hello_with_empty_name():
