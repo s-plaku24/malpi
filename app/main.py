@@ -9,7 +9,7 @@ load_dotenv()
 API_TOKEN = os.getenv("API_TOKEN")
 
 # Load the ML model (use just 'iris.mdl' for Docker)
-model = joblib.load('iris.mdl')
+model = joblib.load('app/iris.mdl')
 
 app = FastAPI(
     title="Iris Prediction API",
